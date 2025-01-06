@@ -1,0 +1,1 @@
+export type TabType = 'basic' | 'advance' | 'curriculum' | 'publish';
