@@ -38,7 +38,7 @@ const CurriculumSection = ({
   };
 
   return (
-    <div className="mb-4 bg-gray-50 rounded-lg">
+    <div className="mb-4 bg-white dark:bg-gray-800 rounded-lg">
       <div className="flex items-center justify-between p-4">
         <div className="flex items-center gap-2 flex-1">
           <button onClick={() => onToggleSection(section.id)} className="p-1">
@@ -51,25 +51,25 @@ const CurriculumSection = ({
                 type="text"
                 value={editedTitle}
                 onChange={(e) => setEditedTitle(e.target.value)}
-                className="flex-1 px-3 py-1 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="flex-1 px-3 py-1 border border-gray-200 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 dark:bg-gray-700 dark:text-gray-200"
                 placeholder="Enter section title"
                 autoFocus
               />
               <button
                 onClick={handleSaveEdit}
-                className="p-1 hover:bg-green-100 rounded-lg text-green-600"
+                className="p-1 hover:bg-green-100 dark:hover:bg-green-700 rounded-lg text-green-600 dark:text-green-300"
               >
                 <Check className="h-4 w-4" />
               </button>
               <button
                 onClick={handleCancelEdit}
-                className="p-1 hover:bg-red-100 rounded-lg text-red-600"
+                className="p-1 hover:bg-red-100 dark:hover:bg-red-700 rounded-lg text-red-600 dark:text-red-300"
               >
                 <X className="h-4 w-4" />
               </button>
             </div>
           ) : (
-            <span className="font-medium">Section {section.order}: {section.title}</span>
+            <span className="font-medium text-gray-900 dark:text-gray-100">Section {section.order}: {section.title}</span>
           )}
         </div>
         
@@ -79,7 +79,7 @@ const CurriculumSection = ({
               e.stopPropagation();
               onAddLesson(section.id);
             }}
-            className="p-1 hover:bg-gray-200 rounded-lg"
+            className="p-1 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg"
           >
             <Plus className="h-4 w-4" />
           </button>
@@ -90,7 +90,7 @@ const CurriculumSection = ({
                   e.stopPropagation();
                   setIsEditing(true);
                 }}
-                className="p-1 hover:bg-gray-200 rounded-lg"
+                className="p-1 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg"
               >
                 <Pencil className="h-4 w-4" />
               </button>
@@ -99,7 +99,7 @@ const CurriculumSection = ({
                   e.stopPropagation();
                   onDeleteSection(section.id);
                 }}
-                className="p-1 hover:bg-gray-200 rounded-lg"
+                className="p-1 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg"
               >
                 <Trash2 className="h-4 w-4" />
               </button>

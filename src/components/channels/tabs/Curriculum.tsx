@@ -93,20 +93,19 @@ const Curriculum = () => {
   };
 
   return (
-    <div className="p-6">
-        <div className="mb-6 flex justify-between items-center">
-          <h2 className="text-lg font-semibold">Channel Curriculum</h2>
-          <div className="space-x-3">
-            <button className="px-4 py-2 text-purple-600 hover:bg-purple-50 rounded-lg">
-              Save
-            </button>
-            <button className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700">
-              Save & Preview
-            </button>
-          </div>
+    <div className="p-6 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+      <div className="mb-6 flex justify-between items-center">
+        <h2 className="text-lg font-semibold">Channel Curriculum</h2>
+        <div className="space-x-3">
+          <button className="px-4 py-2 text-purple-600 hover:bg-purple-50 dark:text-purple-400 dark:hover:bg-purple-700 rounded-lg">
+            Save
+          </button>
+          <button className="px-4 py-2 bg-purple-600 text-white hover:bg-purple-700 dark:bg-purple-700 dark:hover:bg-purple-600 rounded-lg">
+            Save & Preview
+          </button>
         </div>
+      </div>
       <div className="max-w-3xl">
-
         <div className="space-y-4">
           {sections.map((section) => (
             <CurriculumSection
@@ -120,10 +119,9 @@ const Curriculum = () => {
               onDeleteLesson={handleDeleteLesson}
             />
           ))}
-
           <button
             onClick={handleAddSection}
-            className="w-full py-3 border-2 border-dashed border-gray-200 rounded-lg text-gray-500 hover:border-purple-500 hover:text-purple-500 flex items-center justify-center gap-2"
+            className="w-full py-3 border-2 border-dashed border-gray-200 dark:border-gray-700 rounded-lg text-gray-500 hover:border-purple-500 hover:text-purple-500 dark:text-gray-400 dark:hover:border-purple-500 dark:hover:text-purple-500 flex items-center justify-center gap-2"
           >
             <Plus className="h-4 w-4" />
             Add Section
@@ -131,10 +129,10 @@ const Curriculum = () => {
         </div>
 
         <div className="flex justify-between mt-6">
-          <button className="px-6 py-2 border border-gray-200 text-gray-600 rounded-lg hover:bg-gray-50">
+          <button className="px-6 py-2 border border-gray-200 text-gray-600 rounded-lg hover:bg-gray-50 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-600">
             Previous
           </button>
-          <button className="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700">
+          <button className="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 dark:bg-purple-700 dark:hover:bg-purple-600">
             Save & Next
           </button>
         </div>
