@@ -94,7 +94,6 @@ const Curriculum = () => {
 
   return (
     <div className="p-6">
-      <div className="max-w-3xl">
         <div className="mb-6 flex justify-between items-center">
           <h2 className="text-lg font-semibold">Channel Curriculum</h2>
           <div className="space-x-3">
@@ -106,6 +105,7 @@ const Curriculum = () => {
             </button>
           </div>
         </div>
+      <div className="max-w-3xl">
 
         <div className="space-y-4">
           {sections.map((section) => (

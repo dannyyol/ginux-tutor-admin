@@ -17,10 +17,10 @@ const PublishChannel = () => {
       <div className="mb-6 flex justify-between items-center">
         <h2 className="text-lg font-semibold">Publish Channel</h2>
         <div className="space-x-3">
-          <button className="px-4 py-2 text-sm border border-purple-600 text-purple-600 rounded-lg hover:bg-purple-50">
+          <button className="px-4 py-2 text-purple-600 hover:bg-purple-50 rounded-lg">
             Save
           </button>
-          <button className="px-4 py-2 text-sm bg-purple-600 text-white rounded-lg hover:bg-purple-700">
+          <button className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700">
             Save & Preview
           </button>
         </div>
