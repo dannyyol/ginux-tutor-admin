@@ -1,10 +1,13 @@
 import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
+import { useTheme } from '../../../context/ThemeContext';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const StatisticDonut = () => {
+  const { isDarkMode } = useTheme();
+
   const data = {
     labels: ['Active Posts', 'Pending Review', 'Declined'],
     datasets: [
@@ -27,6 +30,7 @@ const StatisticDonut = () => {
         position: 'bottom' as const,
         labels: {
           padding: 20,
+          color: isDarkMode ? '#9CA3AF' : '#6B7280',
         },
       },
     },
@@ -34,12 +38,12 @@ const StatisticDonut = () => {
 
   return (
     <div>
-      <h3 className="text-lg font-semibold mb-4">Statistic</h3>
+      <h3 className="text-lg font-semibold mb-4 dark:text-white">Statistic</h3>
       <div className="relative">
         <Doughnut data={data} options={options} />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-          <div className="text-2xl font-bold">186</div>
-          <div className="text-sm text-gray-500">Posts</div>
+          <div className="text-2xl font-bold dark:text-white">186</div>
+          <div className="text-sm text-gray-500 dark:text-gray-400">Posts</div>
         </div>
       </div>
     </div>

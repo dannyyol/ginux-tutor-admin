@@ -48,13 +48,13 @@ const DashboardContent = () => {
 
       {/* Three Column Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 mb-6">
-        <div className="bg-white p-6 rounded-xl">
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl">
           <ChannelProgress />
         </div>
-        <div className="bg-white p-6 rounded-xl">
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl">
           <StatisticDonut />
         </div>
-        <div className="bg-white p-6 rounded-xl">
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl">
           <TransactionMetrics />
         </div>
       </div>

@@ -29,10 +29,13 @@ const Dropdown = ({ isOpen, onClose, children, width = 'w-56' }: DropdownProps) 
   if (!isOpen) return null;
 
   return (
-    <div ref={dropdownRef} className={`absolute right-0 mt-2 ${width} bg-white rounded-lg shadow-lg border border-gray-200 z-50`}>
+    <div 
+      ref={dropdownRef} 
+      className={`absolute right-0 mt-2 ${width} bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 z-50`}
+    >
       {children}
     </div>
   );
-}
+};
 
 export default Dropdown;

@@ -20,16 +20,16 @@ const Pagination = ({
 
   return (
     <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p className="text-sm text-gray-500">
+      <p className="text-sm text-gray-500 dark:text-gray-400">
         Showing {startItem} to {endItem} of {totalItems} entries
       </p>
       <div className="flex gap-2">
         <button 
           onClick={() => onPageChange(currentPage - 1)}
           disabled={currentPage === 1}
-          className="p-2 hover:bg-gray-100 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
+          className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          <ChevronLeft className="h-5 w-5 text-gray-600" />
+          <ChevronLeft className="h-5 w-5 text-gray-600 dark:text-gray-400" />
         </button>
         
         {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
@@ -39,7 +39,7 @@ const Pagination = ({
             className={`px-3 py-1 text-sm rounded ${
               currentPage === page
                 ? 'bg-purple-600 text-white'
-                : 'border border-gray-200 hover:bg-gray-50'
+                : 'border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 dark:text-gray-300'
             }`}
           >
             {page}
@@ -49,9 +49,9 @@ const Pagination = ({
         <button 
           onClick={() => onPageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
-          className="p-2 hover:bg-gray-100 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
+          className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          <ChevronRight className="h-5 w-5 text-gray-600" />
+          <ChevronRight className="h-5 w-5 text-gray-600 dark:text-gray-400" />
         </button>
       </div>
     </div>

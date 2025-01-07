@@ -51,16 +51,19 @@ const StudentSlider = () => {
   const visibleStudents = students.slice(currentIndex, currentIndex + itemsPerPage);
 
   return (
-    <div className="bg-white rounded-xl shadow-sm">
-      <div className="p-6 border-b border-gray-200">
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm">
+      <div className="p-6 border-b border-gray-200 dark:border-gray-700">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-semibold">New Students <span className="ml-2 px-2 py-1 text-xs bg-purple-100 text-purple-600 rounded-full">4</span></h2>
+          <h2 className="text-lg font-semibold dark:text-white">
+            New Students 
+            <span className="ml-2 px-2 py-1 text-xs bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 rounded-full">4</span>
+          </h2>
           <div className="flex items-center space-x-2">
-            <button onClick={prevSlide} className="p-1 hover:bg-gray-100 rounded-full">
-              <ChevronLeft className="h-5 w-5 text-gray-600" />
+            <button onClick={prevSlide} className="p-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full">
+              <ChevronLeft className="h-5 w-5 text-gray-600 dark:text-gray-400" />
             </button>
-            <button onClick={nextSlide} className="p-1 hover:bg-gray-100 rounded-full">
-              <ChevronRight className="h-5 w-5 text-gray-600" />
+            <button onClick={nextSlide} className="p-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full">
+              <ChevronRight className="h-5 w-5 text-gray-600 dark:text-gray-400" />
             </button>
           </div>
         </div>
@@ -68,11 +71,11 @@ const StudentSlider = () => {
       <div className="p-6">
         <div className="grid grid-cols-3 gap-4">
           {visibleStudents.map((student) => (
-            <div key={student.id} className="flex flex-col items-center p-4 border border-gray-100 rounded-lg">
+            <div key={student.id} className="flex flex-col items-center p-4 border border-gray-100 dark:border-gray-700 rounded-lg dark:bg-gray-800">
               <img src={student.avatar} alt={student.name} className="h-16 w-16 rounded-full mb-3" />
-              <h3 className="font-medium text-center">{student.name}</h3>
-              <p className="text-sm text-gray-500 mb-2">{student.date}</p>
-              <span className="px-3 py-1 text-sm text-green-700 bg-green-100 rounded-full">
+              <h3 className="font-medium text-center dark:text-white">{student.name}</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">{student.date}</p>
+              <span className="px-3 py-1 text-sm text-green-700 dark:text-green-300 bg-green-100 dark:bg-green-900 rounded-full">
                 {student.status}
               </span>
             </div>

@@ -8,7 +8,7 @@ interface TransactionRowProps {
 
 const TransactionRow: React.FC<TransactionRowProps> = ({ transaction }) => {
   return (
-    <tr className="hover:bg-gray-50">
+    <tr className="hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer">
       <td className="px-4 md:px-6 py-4">
         <div className="flex items-center">
           <img

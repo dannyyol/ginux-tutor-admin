@@ -15,11 +15,11 @@ const StatCard = ({ label, count, period, type }: StatCardProps) => {
   };
 
   return (
-    <div className="bg-white rounded-lg p-4 flex flex-col">
+    <div className="bg-white dark:bg-gray-800 rounded-lg p-4 flex flex-col">
       <span className={`text-sm ${colors[type]}`}>{label}</span>
       <div className="flex items-baseline mt-1">
-        <span className="text-2xl font-semibold">{count}</span>
-        <span className="text-sm text-gray-500 ml-2">{period}</span>
+        <span className="text-2xl font-semibold dark:text-white">{count}</span>
+        <span className="text-sm text-gray-500 dark:text-gray-400 ml-2">{period}</span>
       </div>
     </div>
   );

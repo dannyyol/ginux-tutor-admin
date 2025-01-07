@@ -41,11 +41,6 @@ const Sidebar = ({ isOpen, onClose, onPageChange, currentPage }: SidebarProps) =
     }
   };
 
-  const handleLogout = () => {
-    // Add logout logic here
-    console.log('Logging out...');
-  };
-
   return (
     <>
       {isOpen && (
@@ -54,26 +49,20 @@ const Sidebar = ({ isOpen, onClose, onPageChange, currentPage }: SidebarProps) =
 
       <aside
         id="sidebar"
-        className={`fixed top-0 left-0 h-full w-64 bg-white border-r border-gray-200 z-30 transform transition-transform duration-200 ease-in-out flex flex-col ${
+        className={`fixed top-0 left-0 h-full w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 z-30 transform transition-transform duration-200 ease-in-out flex flex-col ${
           isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
       >
-        <div className="h-16 flex items-center justify-between px-6 border-b border-gray-200">
+        <div className="h-16 flex items-center justify-between px-6 border-b border-gray-200 dark:border-gray-700">
           <div className="flex items-center">
             <LayoutGrid className="h-6 w-6 text-purple-600" />
-            <span className="ml-2 font-semibold text-xl">Dashboard</span>
+            <span className="ml-2 font-semibold text-xl dark:text-white">Dashboard</span>
           </div>
-          <button
-            onClick={onClose}
-            className="lg:hidden p-2 hover:bg-gray-100 rounded-lg"
-          >
-            <Settings className="h-5 w-5 text-gray-600" />
-          </button>
         </div>
 
         <div className="flex-1 py-6">
           <div className="px-4">
-            <p className="text-xs font-semibold text-gray-400 mb-4">MAIN MENU</p>
+            <p className="text-xs font-semibold text-gray-400 dark:text-gray-500 mb-4">MAIN MENU</p>
             <nav>
               {menuItems.map((item, index) => (
                 <a
@@ -83,8 +72,8 @@ const Sidebar = ({ isOpen, onClose, onPageChange, currentPage }: SidebarProps) =
                     e.preventDefault();
                     handleMenuItemClick(item.path);
                   }}
-                  className={`flex items-center justify-between px-4 py-3 text-gray-600 hover:bg-purple-50 hover:text-purple-600 rounded-lg mb-1 ${
-                    currentPage === item.path ? 'bg-purple-50 text-purple-600' : ''
+                  className={`flex items-center justify-between px-4 py-3 text-gray-600 dark:text-gray-300 hover:bg-purple-50 dark:hover:bg-gray-700 hover:text-purple-600 dark:hover:text-purple-400 rounded-lg mb-1 ${
+                    currentPage === item.path ? 'bg-purple-50 dark:bg-gray-700 text-purple-600 dark:text-purple-400' : ''
                   }`}
                 >
                   <div className="flex items-center">
@@ -92,7 +81,7 @@ const Sidebar = ({ isOpen, onClose, onPageChange, currentPage }: SidebarProps) =
                     <span className="text-sm font-medium">{item.label}</span>
                   </div>
                   {item.badge && (
-                    <span className="bg-purple-100 text-purple-600 px-2 py-0.5 rounded-full text-xs">
+                    <span className="bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 px-2 py-0.5 rounded-full text-xs">
                       {item.badge}
                     </span>
                   )}
@@ -102,11 +91,9 @@ const Sidebar = ({ isOpen, onClose, onPageChange, currentPage }: SidebarProps) =
           </div>
         </div>
 
-        {/* Logout Button */}
         <div className="p-4">
           <button
-            onClick={handleLogout}
-            className="flex items-center w-full px-4 py-3 text-gray-600 hover:bg-purple-50 hover:text-purple-600 rounded-lg"
+            className="flex items-center w-full px-4 py-3 text-gray-600 dark:text-gray-300 hover:bg-purple-50 dark:hover:bg-gray-700 hover:text-purple-600 dark:hover:text-purple-400 rounded-lg"
           >
             <LogOut className="h-5 w-5 mr-3" />
             <span className="text-sm font-medium">Logout</span>

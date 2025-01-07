@@ -4,6 +4,7 @@ import NotificationDropdown from './notifications/NotificationDropdown';
 import SettingsDropdown from './notifications/SettingsDropdown';
 import Dropdown from './common/Dropdown';
 import MobileSearch from './search/MobileSearch';
+import ThemeToggle from './ThemeToggle';
 
 interface HeaderProps {
   onMenuClick: () => void;
@@ -25,14 +26,14 @@ const Header = ({ onMenuClick }: HeaderProps) => {
         onClose={() => setShowMobileSearch(false)} 
       />
       
-      <header className="h-16 fixed top-0 right-0 left-0 lg:left-64 bg-white border-b border-gray-200 z-10">
+      <header className="h-16 fixed top-0 right-0 left-0 lg:left-64 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 z-10">
         <div className="flex items-center justify-between h-full px-4 md:px-6">
           <div className="flex items-center gap-4">
             <button 
-              className="lg:hidden p-2 hover:bg-gray-100 rounded-lg"
+              className="lg:hidden p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"
               onClick={onMenuClick}
             >
-              <Menu className="h-5 w-5 text-gray-600" />
+              <Menu className="h-5 w-5 text-gray-600 dark:text-gray-400" />
             </button>
             <div className="flex-1 max-w-xl hidden md:block">
               <div className="relative">
@@ -40,27 +41,28 @@ const Header = ({ onMenuClick }: HeaderProps) => {
                 <input
                   type="text"
                   placeholder="Search anything..."
-                  className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full pl-10 pr-4 py-2 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
                 />
               </div>
             </div>
           </div>
           <div className="flex items-center space-x-2 md:space-x-4">
             <button 
-              className="md:hidden p-2 hover:bg-gray-100 rounded-lg"
+              className="md:hidden p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"
               onClick={() => setShowMobileSearch(true)}
             >
-              <Search className="h-5 w-5 text-gray-600" />
+              <Search className="h-5 w-5 text-gray-600 dark:text-gray-400" />
             </button>
+            <ThemeToggle />
             <div className="relative">
               <button 
-                className="p-2 hover:bg-gray-100 rounded-lg"
+                className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"
                 onClick={() => {
                   setShowNotifications(!showNotifications);
                   setShowSettings(false);
                 }}
               >
-                <Bell className="h-5 w-5 text-gray-600" />
+                <Bell className="h-5 w-5 text-gray-600 dark:text-gray-400" />
               </button>
               <Dropdown 
                 isOpen={showNotifications} 
@@ -72,13 +74,13 @@ const Header = ({ onMenuClick }: HeaderProps) => {
             </div>
             <div className="relative">
               <button 
-                className="p-2 hover:bg-gray-100 rounded-lg"
+                className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"
                 onClick={() => {
                   setShowSettings(!showSettings);
                   setShowNotifications(false);
                 }}
               >
-                <Settings className="h-5 w-5 text-gray-600" />
+                <Settings className="h-5 w-5 text-gray-600 dark:text-gray-400" />
               </button>
               <Dropdown 
                 isOpen={showSettings} 
