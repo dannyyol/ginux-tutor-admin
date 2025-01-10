@@ -7,6 +7,9 @@ import StudentsPage from './pages/StudentsPage';
 import ChannelsPage from './pages/ChannelsPage';
 import PostsPage from './pages/PostsPage';
 import RolesPage from './pages/RolesPage';
+import MarketplacePage from './pages/MarketplacePage';
+import SettingsPage from './pages/SettingsPage';
+import TransactionsPage from './pages/TransactionsPage';
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
@@ -32,6 +35,9 @@ function App() {
             <Route path="/channels/*" element={<ChannelsPage />} />
             <Route path="/posts" element={<PostsPage />} />
             <Route path="/roles" element={<RolesPage />} />
+            <Route path="/marketplace" element={<MarketplacePage />} />
+            <Route path="/transactions" element={<TransactionsPage />} />
+            <Route path="/settings" element={<SettingsPage />} />
           </Routes>
         </main>
       </div>
