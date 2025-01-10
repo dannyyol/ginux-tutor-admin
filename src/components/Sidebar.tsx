@@ -1,27 +1,29 @@
 import React, { useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { 
   LayoutGrid, Users, Layers, MessageSquare, 
   ShoppingBag, Receipt, Settings, LogOut
 } from 'lucide-react';
 
 const menuItems = [
-  { icon: LayoutGrid, label: 'Dashboard', path: 'dashboard' },
-  { icon: Users, label: 'Students', path: 'students' },
-  { icon: Layers, label: 'Channels', path: 'channels' },
-  { icon: MessageSquare, label: 'Posts', path: 'posts', badge: '12' },
-  { icon: ShoppingBag, label: 'Market Place', path: 'marketplace' },
-  { icon: Receipt, label: 'Transactions', path: 'transactions' },
-  { icon: Settings, label: 'Settings', path: 'settings' },
+  { icon: LayoutGrid, label: 'Dashboard', path: '/dashboard' },
+  { icon: Users, label: 'Students', path: '/students' },
+  { icon: Layers, label: 'Channels', path: '/channels' },
+  { icon: MessageSquare, label: 'Posts', path: '/posts', badge: '12' },
+  { icon: ShoppingBag, label: 'Market Place', path: '/marketplace' },
+  { icon: Receipt, label: 'Transactions', path: '/transactions' },
+  { icon: Settings, label: 'Settings', path: '/settings' },
 ];
 
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
-  onPageChange: (page: string) => void;
-  currentPage: string;
 }
 
-const Sidebar = ({ isOpen, onClose, onPageChange, currentPage }: SidebarProps) => {
+const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const sidebar = document.getElementById('sidebar');
@@ -35,7 +37,7 @@ const Sidebar = ({ isOpen, onClose, onPageChange, currentPage }: SidebarProps) =
   }, [isOpen, onClose]);
 
   const handleMenuItemClick = (path: string) => {
-    onPageChange(path);
+    navigate(path);
     if (window.innerWidth < 1024) {
       onClose();
     }
@@ -73,7 +75,7 @@ const Sidebar = ({ isOpen, onClose, onPageChange, currentPage }: SidebarProps) =
                     handleMenuItemClick(item.path);
                   }}
                   className={`flex items-center justify-between px-4 py-3 text-gray-600 dark:text-gray-300 hover:bg-purple-50 dark:hover:bg-gray-700 hover:text-purple-600 dark:hover:text-purple-400 rounded-lg mb-1 ${
-                    currentPage === item.path ? 'bg-purple-50 dark:bg-gray-700 text-purple-600 dark:text-purple-400' : ''
+                    location.pathname === item.path ? 'bg-purple-50 dark:bg-gray-700 text-purple-600 dark:text-purple-400' : ''
                   }`}
                 >
                   <div className="flex items-center">
