@@ -14,7 +14,7 @@ const ChannelTable = ({ activeTab }: ChannelTableProps) => {
   });
 
   return (
-    <div className="bg-white dark:bg-gray-900 rounded-xl shadow-sm">
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm mt-5">
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
           <thead>
@@ -29,7 +29,7 @@ const ChannelTable = ({ activeTab }: ChannelTableProps) => {
           </thead>
           <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
             {filteredChannels.map((channel) => (
-              <tr key={channel.id} className="hover:bg-gray-50 dark:hover:bg-gray-800">
+              <tr key={channel.id} className="hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer">
                 <td className="px-4 md:px-6 py-4">
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">{channel.icon}</span>

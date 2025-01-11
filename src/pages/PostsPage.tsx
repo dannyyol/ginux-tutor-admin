@@ -3,6 +3,7 @@ import PostTabs from '../components/posts/PostTabs';
 import PostFilters from '../components/posts/PostFilters';
 import PostTable from '../components/posts/PostTable';
 import { Post, PostTab } from '../components/posts/types';
+import PostStats from '../components/channels/PostStats';
 
 const mockPosts: Post[] = [
   {
@@ -65,6 +66,7 @@ const PostsPage = () => {
 
   return (
     <div className="p-4 md:p-6">
+      <PostStats />
       <div className="mb-6">
         <PostTabs
           activeTab={activeTab}

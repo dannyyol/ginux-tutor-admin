@@ -12,7 +12,7 @@ interface PostTabsProps {
 
 const PostTabs = ({ activeTab, onTabChange, counts }: PostTabsProps) => {
   return (
-    <div className="flex border-b border-gray-200">
+    <div className="flex border-b border-gray-200 dark:border-gray-700">
       <button
         onClick={() => onTabChange('active')}
         className={`flex items-center px-4 py-2 border-b-2 -mb-px ${
